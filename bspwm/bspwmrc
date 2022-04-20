@@ -1,0 +1,48 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+
+# sets
+bspc config border_width         3
+bspc config window_gap          10
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+# rules
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a firefox desktop='^2'
+bspc rule -a kitty desktop='^1'
+bspc rule -a feh desktop='^1' state=floating follow=on
+bspc rule -a Thunar desktop='^4'
+bspc rule -a thunderbird desktop='^3'
+bspc rule -a code-oss desktop='^4' follow=on
+bspc rule -a tm desktop='^5'
+bspc rule -a pm desktop='^5'
+bspc rule -a pr desktop='^5'
+bspc rule -a telegram-desktop desktop='^3'
+bspc rule -a stella desktop='^6'
+bspc rule -a mGBA desktop='^6'
+bspc rule -a mpv desktop='^7' state=floating
+bspc rule -a vlc desktop='^7' state=floating
+bspc rule -a fcitx-gtk3-configtool state=floating
+bspc rule -a simplescreenrecorder desktop='^9' state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+
+# autostart
+setxkbmap -layout 'es' &
+picom -cCGF &
+feh --bg-scale /home/lwy/Pictures/piccas_img/img37.jpg    ## Wallpapper
+fcitx &
+# pipewire &
+# pipewire-pulse &
+# pipewire-media-session &
+pulseaudio &
+xscreensaver -nosplash &
+
+$HOME/.config/polybar/launch.sh
+
