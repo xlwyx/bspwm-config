@@ -1,0 +1,20 @@
+***************************************************************************
+##                      bspwm config                                   ##   
+***********************************************************************
+
+## Preparations:
+
+xorg feh lxappearance arc-theme papirus-icon-theme opendoas hddtemp *xterm/rxvt-unicode/kitty mpv flameshot mc ranger picom papirus-icon-theme Adapta/(adapta-gtk-theme) acpi (ttf-font-awesome-5)/font-awesome5 (ttf-droid)/fonts-droid-ttf (fonts-dejavu)/dejaVu-fonts-ttf nerd-fonts-ttf nerd-fonts-otf ttf-ipafont
+
+## We configure the .xinitrc file ##
+## WM launch
+dbus-run-session bspwm
+
+## Here, we found the default bspwm config ##
+cp -r bspwm-config/* ~/.config/
+
+## In case of installing picom, for its correct operation; it is configured in:
+doas nano /usr/share/examples/picom/picom.sample.conf
+    -- On Transparency/Opacity
+    inactive-opacity-override = true
+    # inactive-opacity-override = false;
