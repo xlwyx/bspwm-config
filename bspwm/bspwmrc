@@ -14,12 +14,13 @@ bspc config gapless_monocle      true
 
 # rules
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a firefox desktop='^2'
-bspc rule -a kitty desktop='^1'
+bspc rule -a Chromium desktop='^2'
+bspc rule -a URxvt desktop='^1'
 bspc rule -a feh desktop='^1' state=floating follow=on
-bspc rule -a Thunar desktop='^4'
+bspc rule -a Zathura desktop='^4' follow=on
+bspc rule -a Pcmanfm desktop='^4'
 bspc rule -a thunderbird desktop='^3'
-bspc rule -a code-oss desktop='^4' follow=on
+bspc rule -a Atom desktop='^4' follow=on
 bspc rule -a tm desktop='^5'
 bspc rule -a pm desktop='^5'
 bspc rule -a pr desktop='^5'
